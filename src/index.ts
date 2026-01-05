@@ -1,0 +1,19 @@
+export type { IntegrationEvent } from './integration-event.interface';
+
+export type { UserAvatarPathAddedIntegrationEvent } from './identity/user-avatar-path-added.integration-event';
+export type { UserAvatarPathChangedIntegrationEvent } from './identity/user-avatar-path-changed.integration-event';
+export type { UserAvatarPathRemovedIntegrationEvent } from './identity/user-avatar-path-removed.integration-event';
+export type { UserDeletedIntegrationEvent } from './identity/user-deleted.integration-event';
+export type { UserEmailAddedIntegrationEvent } from './identity/user-email-added.integration-event';
+export type { UserEmailChangeIssuedIntegrationEvent } from './identity/user-email-change-issued.integration-event';
+export type { UserEmailChangeRevokedIntegrationEvent } from './identity/user-email-change-revoked.integration-event';
+export type { UserEmailChangedIntegrationEvent } from './identity/user-email-changed.integration-event';
+export type { UserEmailRemovedIntegrationEvent } from './identity/user-email-removed.integration-event';
+export type { UserNameChangedIntegrationEvent } from './identity/user-name-changed.integration-event';
+export type { UserPhoneNumberAddedIntegrationEvent } from './identity/user-phone-number-added.integration-event';
+export type { UserPhoneNumberChangeIssuedIntegrationEvent } from './identity/user-phone-number-change-issued.integration-event';
+export type { UserPhoneNumberChangeRevokedIntegrationEvent } from './identity/user-phone-number-change-revoked.integration-event';
+export type { UserPhoneNumberChangedIntegrationEvent } from './identity/user-phone-number-changed.integration-event';
+export type { UserPhoneNumberRemovedIntegrationEvent } from './identity/user-phone-number-removed.integration-event';
+export type { UserRegisteredLocalIntegrationEvent } from './identity/user-registered-local.integration-event';
+export type { UserUsernameChangedIntegrationEvent } from './identity/user-username-changed.integration-event';
