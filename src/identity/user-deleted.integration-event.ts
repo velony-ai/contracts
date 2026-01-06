@@ -1,15 +1,13 @@
-import { IntegrationEvent } from '../integration-event.interface';
+import { IntegrationEvent } from '../integration-event';
 
-type Type = 'user.deleted';
-
-interface Payload {
-  userId: string;
+declare module '../integration-event' {
+  interface IntegrationEventRegistry {
+    'user.deleted': {
+      payload: {
+        userId: string;
+      };
+    };
+  }
 }
 
-export interface UserDeletedIntegrationEvent extends IntegrationEvent<
-  Type,
-  Payload
-> {
-  type: Type;
-  payload: Payload;
-}
+export type UserDeletedIntegrationEvent = IntegrationEvent<'user.deleted'>;

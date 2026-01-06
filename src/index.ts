@@ -1,4 +1,4 @@
-export type { IntegrationEvent } from './integration-event.interface';
+export type { IntegrationEvent } from './integration-event';
 
 export type { UserAvatarPathAddedIntegrationEvent } from './identity/user-avatar-path-added.integration-event';
 export type { UserAvatarPathChangedIntegrationEvent } from './identity/user-avatar-path-changed.integration-event';

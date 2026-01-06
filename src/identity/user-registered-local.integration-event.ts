@@ -1,17 +1,16 @@
-import { IntegrationEvent } from '../integration-event.interface';
+import { IntegrationEvent } from '../integration-event';
 
-type Type = 'user.registered-local';
-
-interface Payload {
-  userId: string;
-  name: string;
-  username: string;
+declare module '../integration-event' {
+  interface IntegrationEventRegistry {
+    'user.registered-local': {
+      payload: {
+        userId: string;
+        name: string;
+        username: string;
+      };
+    };
+  }
 }
 
-export interface UserRegisteredLocalIntegrationEvent extends IntegrationEvent<
-  Type,
-  Payload
-> {
-  type: Type;
-  payload: Payload;
-}
+export type UserRegisteredLocalIntegrationEvent =
+  IntegrationEvent<'user.registered-local'>;

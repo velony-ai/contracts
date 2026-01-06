@@ -1,15 +1,14 @@
-import { IntegrationEvent } from '../integration-event.interface';
+import { IntegrationEvent } from '../integration-event';
 
-type Type = 'user.avatar-path.removed';
-
-interface Payload {
-  userId: string;
+declare module '../integration-event' {
+  interface IntegrationEventRegistry {
+    'user.avatar-path.removed': {
+      payload: {
+        userId: string;
+      };
+    };
+  }
 }
 
-export interface UserAvatarPathRemovedIntegrationEvent extends IntegrationEvent<
-  Type,
-  Payload
-> {
-  type: Type;
-  payload: Payload;
-}
+export type UserAvatarPathRemovedIntegrationEvent =
+  IntegrationEvent<'user.avatar-path.removed'>;

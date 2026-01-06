@@ -16,18 +16,25 @@ This package provides TypeScript interfaces for integration events used across V
 
 ```typescript
 import { 
-  UserCreatedIntegrationEvent,
-  UserEmailUpdatedIntegrationEvent,
-  UserPhoneAddedIntegrationEvent 
+  UserRegisteredLocalIntegrationEvent,
+  UserEmailAddedIntegrationEvent,
+  UserPhoneNumberAddedIntegrationEvent 
 } from '@velony/contracts';
 
-// Example: Handle a user created event
-const event: UserCreatedIntegrationEvent = {
-  type: 'user.created',
+// Example: Handle a user registered event
+const event: UserRegisteredLocalIntegrationEvent = {
+  id: 'evt-123',
+  type: 'user.registered-local',
+  version: '1.0.0',
+  occurredAt: new Date(),
   payload: {
-    id: 'user-123',
-    createdAt: new Date()
-  }
+    userId: 'user-123',
+    name: 'John Doe',
+    username: 'johndoe'
+  },
+  partitionKey: 'user-123',
+  createdAt: new Date(),
+  publishedAt: null
 };
 ```
 

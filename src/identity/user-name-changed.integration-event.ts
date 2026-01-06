@@ -1,16 +1,15 @@
-import { IntegrationEvent } from '../integration-event.interface';
+import { IntegrationEvent } from '../integration-event';
 
-type Type = 'user.name.changed';
-
-interface Payload {
-  userId: string;
-  name: string;
+declare module '../integration-event' {
+  interface IntegrationEventRegistry {
+    'user.name.changed': {
+      payload: {
+        userId: string;
+        name: string;
+      };
+    };
+  }
 }
 
-export interface UserNameChangedIntegrationEvent extends IntegrationEvent<
-  Type,
-  Payload
-> {
-  type: Type;
-  payload: Payload;
-}
+export type UserNameChangedIntegrationEvent =
+  IntegrationEvent<'user.name.changed'>;
