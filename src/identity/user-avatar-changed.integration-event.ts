@@ -2,14 +2,14 @@ import { IntegrationEvent } from '../integration-event';
 
 declare module '../integration-event' {
   interface IntegrationEventRegistry {
-    'user.email.added': {
+    'user.avatar.changed': {
       payload: {
         userId: string;
-        email: string;
+        avatarPath: string | null;
       };
     };
   }
 }
 
-export type UserEmailAddedIntegrationEvent =
-  IntegrationEvent<'user.email.added'>;
+export type UserAvatarChangedIntegrationEvent =
+  IntegrationEvent<'user.avatar.changed'>;

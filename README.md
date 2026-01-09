@@ -16,21 +16,24 @@ This package provides TypeScript interfaces for integration events used across V
 
 ```typescript
 import { 
-  UserRegisteredLocalIntegrationEvent,
-  UserEmailAddedIntegrationEvent,
-  UserPhoneNumberAddedIntegrationEvent 
+  UserCreatedIntegrationEvent,
+  UserEmailChangedIntegrationEvent,
+  UserPhoneNumberChangedIntegrationEvent 
 } from '@velony/contracts';
 
-// Example: Handle a user registered event
-const event: UserRegisteredLocalIntegrationEvent = {
+// Example: Handle a user created event
+const event: UserCreatedIntegrationEvent = {
   id: 'evt-123',
-  type: 'user.registered-local',
+  type: 'user.created',
   version: '1.0.0',
   occurredAt: new Date(),
   payload: {
     userId: 'user-123',
     name: 'John Doe',
-    username: 'johndoe'
+    username: 'johndoe',
+    avatarPath: 'https://example.com/avatar.jpg',
+    email: 'john.doe@example.com',
+    phoneNumber: '+1234567890'
   },
   partitionKey: 'user-123',
   createdAt: new Date(),
@@ -42,19 +45,15 @@ const event: UserRegisteredLocalIntegrationEvent = {
 
 ### Identity Domain
 
+- `UserAvatarChangedIntegrationEvent` - Fired when a user's avatar is changed
 - `UserCreatedIntegrationEvent` - Fired when a new user is created
 - `UserDeletedIntegrationEvent` - Fired when a user is deleted
-- `UserNameUpdatedIntegrationEvent` - Fired when a user's name is updated
-- `UserUsernameUpdatedIntegrationEvent` - Fired when a user's username is updated
-- `UserEmailAddedIntegrationEvent` - Fired when an email is added to a user
+- `UserEmailChangedIntegrationEvent` - Fired when a user's email is changed
 - `UserEmailRemovedIntegrationEvent` - Fired when an email is removed from a user
-- `UserEmailUpdatedIntegrationEvent` - Fired when a user's email is updated
-- `UserPhoneAddedIntegrationEvent` - Fired when a phone number is added to a user
-- `UserPhoneRemovedIntegrationEvent` - Fired when a phone number is removed from a user
-- `UserPhoneUpdatedIntegrationEvent` - Fired when a user's phone number is updated
-- `UserAvatarPathAddedIntegrationEvent` - Fired when an avatar path is added to a user
-- `UserAvatarPathRemovedIntegrationEvent` - Fired when an avatar path is removed from a user
-- `UserAvatarPathUpdatedIntegrationEvent` - Fired when a user's avatar path is updated
+- `UserNameChangedIntegrationEvent` - Fired when a user's name is changed
+- `UserPhoneNumberChangedIntegrationEvent` - Fired when a user's phone number is changed
+- `UserPhoneNumberRemovedIntegrationEvent` - Fired when a phone number is removed from a user
+- `UserUsernameChangedIntegrationEvent` - Fired when a user's username is changed
 
 ## License
 
