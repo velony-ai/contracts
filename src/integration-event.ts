@@ -4,6 +4,7 @@
  */
 export interface IntegrationEventRegistry {
   [key: string]: {
+    version: string;
     payload: unknown;
   };
 }
@@ -32,7 +33,7 @@ export type IntegrationEvent<TType extends keyof IntegrationEventRegistry> = {
    * Version of the event schema for backward compatibility.
    * @readonly
    */
-  readonly version: string;
+  readonly version: IntegrationEventRegistry[TType]['version'];
 
   /**
    * The timestamp when the original domain event occurred.
@@ -51,19 +52,6 @@ export type IntegrationEvent<TType extends keyof IntegrationEventRegistry> = {
    * @readonly
    */
   readonly partitionKey: string;
-
-  /**
-   * The timestamp when this integration event was created.
-   * @readonly
-   */
-  readonly createdAt: Date;
-
-  /**
-   * The timestamp when this event was published to the message broker.
-   * Null if not yet published.
-   * @readonly
-   */
-  readonly publishedAt: Date | null;
 };
 
 /**

@@ -36,8 +36,6 @@ const event: UserCreatedIntegrationEvent = {
     phoneNumber: '+1234567890'
   },
   partitionKey: 'user-123',
-  createdAt: new Date(),
-  publishedAt: null
 };
 ```
 
