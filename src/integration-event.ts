@@ -1,5 +1,3 @@
-declare const INTEGRATION_EVENT_BRAND: unique symbol;
-
 /**
  * Registry that maps integration event types to their payload types.
  * Extend this interface to register new integration event types.
@@ -18,8 +16,6 @@ export interface IntegrationEventRegistry {
  * @template TType - The type identifier for the event (must be registered in IntegrationEventRegistry)
  */
 export type IntegrationEvent<TType extends keyof IntegrationEventRegistry> = {
-  readonly [INTEGRATION_EVENT_BRAND]: void;
-
   /**
    * Unique identifier for this event instance.
    * @readonly
