@@ -48,6 +48,12 @@ export type IntegrationEvent<TType extends keyof IntegrationEventRegistry> = {
   readonly payload: IntegrationEventRegistry[TType]['payload'];
 
   /**
+   * The message broker topic where this event should be published.
+   * @readonly
+   */
+  readonly topic: string;
+
+  /**
    * Key used for partitioning in message brokers for ordering guarantees.
    * @readonly
    */

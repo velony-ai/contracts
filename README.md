@@ -35,6 +35,7 @@ const event: UserCreatedIntegrationEvent = {
     email: 'john.doe@example.com',
     phoneNumber: '+1234567890'
   },
+  topic: 'identity.events',
   partitionKey: 'user-123',
 };
 ```
