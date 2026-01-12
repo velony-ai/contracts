@@ -1,6 +1,6 @@
 {
   "name": "@velony/contracts",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "TypeScript contracts library providing integration event interfaces for event-driven architecture",
   "keywords": [
     "contracts",
@@ -15,7 +15,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
   "files": [
